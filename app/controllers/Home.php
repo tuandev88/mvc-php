@@ -1,15 +1,20 @@
 <?php
 
-class Home
+class Home extends Controller
 {
-    function __construct() {
+    public $model_object;
+    function __construct()
+    {
+        $this->model_object = $this->model('HomeModel');
     }
 
-    function index(){
-        echo 'Trang chủ';
-    }
+    function index()
+    {
+        //echo 'Trang chủ';
+        $data = $this->model_object->getList();
 
-    function detail(){
-        echo 'detail';
+        $detail = $this->model_object->getDetail(1);
+        print_r($detail);
+        
     }
 }
