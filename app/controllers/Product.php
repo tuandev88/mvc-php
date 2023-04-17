@@ -9,6 +9,5 @@ class Product extends Controller
     public function list_product() {
         $product_model = $this->model('ProductModel');
         $data = $product_model->getProductList();
-        var_dump($data);
     }
 }
